@@ -1,7 +1,7 @@
 name: '${COMPOSE_PROJECT_NAME}'
 services:
   mysql:
-    image: mysql:8.4
+    image: mysql:latest
     restart: always
     ports:
       - "3306:3306"
@@ -14,7 +14,7 @@ services:
       MYSQL_PASSWORD: '${WORDPRESS_DB_PASSWORD}'
 
   wordpress:
-    image: wordpress:6.6.2-php8.3-apache
+    image: wordpress:latest
     depends_on:
       - mysql
     links:
@@ -34,33 +34,10 @@ services:
         define('SCRIPT_DEBUG', true );
 
     volumes:
-      - './app/theme/:/var/www/html/wp-content/themes/dk'
-      - './app/plugins/myblock:/var/www/html/wp-content/plugins/dk'
-      - './app/plugins/google-reviews:/var/www/html/wp-content/plugins/google-reviews'
+      - './app/themes/growme:/var/www/html/wp-content/themes/growme'
+      - './app/plugins/GutenbergBlocks:/var/www/html/wp-content/plugins/GutenbergBlocks'
       - './.srv/wordpress/:/var/www/html'
       - './.srv/log/:/var/log'
       - './custom.ini:/usr/local/etc/php/conf.d/custom.ini'
       - './.htaccess:/var/www/html/.htaccess'
       - './wp-config.php:/var/www/html/wp-config.php'
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    depends_on:
-      - mysql
-    links:
-      - mysql:mysql
-    ports:
-      - "8181:80"
-    restart: always
-    environment:
-      MYSQL_USERNAME: '${WORDPRESS_DB_USER}'
-      MYSQL_ROOT_PASSWORD: '${WORDPRESS_DB_PASSWORD}'
-      PMA_HOST: '${WORDPRESS_DB_HOST}'
-    volumes:
-      - './custom.ini:/usr/local/etc/php/conf.d/custom.ini'
-
-  mailhog:
-    image: mailhog/mailhog
-    ports:
-      - "1025:1025" # smtp server
-      - "8025:8025" # web ui

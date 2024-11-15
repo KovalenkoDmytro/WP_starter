@@ -1,5 +1,6 @@
 <?php
 define( 'WP_CACHE', true ); // Added by WP Rocket
+define( 'WP_DEBUG', true ); // Added by WP Rocket
 
 // a helper function to lookup "env_FILE", "env", then fallback
 if (!function_exists('getenv_docker')) {
