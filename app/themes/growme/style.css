@@ -849,3 +849,160 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+.benefits_section .h2{
+	width: 65%;
+}
+
+.cases .case{
+	position: relative;
+}
+
+.cases .case:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+
+	margin: 0;
+	border-radius: var(--bs-border-radius-xxl) !important;
+}
+.cases .case_0:before{
+	background-color: #EC0000CF;
+}
+.cases .case_1:before{
+	background-color: #1C5489BD;
+}
+
+.cases .case_2:before{
+	background-color: #242424cc;
+}
+
+.cases .case .case-content{
+	position: relative;
+	z-index: 2;
+	padding: 20px;
+}
+
+.cases .case .case-content .case-title {
+	width: 250px;
+	height: 100px;
+
+}
+
+.cases .case .case-content .text{
+	background-color: white;
+	padding: 10px;
+	border-radius: 15px;
+	width: 100%;
+}
+
+.cases .case .case-content hr{
+	width: 90%;
+	margin: 0 0 10px 0;
+}
+
+.cases .case .case-content .text div{
+	color: #6A7283;
+}
+
+.cases .case .case-content .case-title img{
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+.banner{
+	padding: 80px 20px;
+	background-size: cover!important;
+	background-position-y: bottom!important;
+}
+
+.banner .banner-wrapper{
+	position: relative;
+	background-size: cover!important;
+	background-position-y: -227px!important;
+}
+
+.banner .banner-wrapper:before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #000000b2;
+	top: 0;
+	border-radius: var(--bs-border-radius-xxl) !important;
+}
+
+.banner .banner-wrapper .title, .banner .banner-wrapper a{
+	color: #fff;
+	z-index: 2;
+}
+
+.full_screen{
+	position: relative;
+	width: 100vw;
+	left: 50%;
+	margin-left: -50vw;
+}
+
+.main_hero_block .main-title{
+	font-size: 80px;
+}
+
+.main_hero_block ul{
+	list-style: none;
+	margin: 20px 0 0 0;
+	display: grid;
+	gap: 15px;
+	padding: 0;
+}
+
+.main_hero_block ul li strong{
+	display: flex;
+	align-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.main_hero_block ul img{
+	border-radius: 5px;
+}
+
+.links_list a{
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	padding: 0 30px;
+}
+iframe{
+	border-radius: var(--bs-border-radius-xxl) !important;
+}
+
+.nav-tabs{
+	margin: 0 0 50px 0;
+}
+.slider_items{
+	min-width: 0;
+	overflow: hidden;
+}
+.slickSlider{
+	min-width: 0;
+	overflow: hidden;
+}
+.slick-track{
+	display: flex;
+	align-items: center;
+	align-content: center;
+	gap: 30px;
+}
+
+.slickSlider .slide{
+	max-width: initial;
+	max-height: 200px;
+}
+
+.slickSlider img{
+	width: initial;
+	max-height: 200px;
+}

@@ -1,0 +1,61 @@
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style/editor.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+.custom-list--edit-button-icon-wrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-list--edit-divider {
+  position: absolute;
+  width: 3px !important;
+  height: 100% !important;
+  right: 50%;
+  top: 0;
+  transform: translateX(50%);
+  margin: 0 !important;
+  background: black;
+  border: none !important;
+}
+
+.custom-list--edit {
+  position: relative;
+}
+.custom-list--edit .list-items {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  position: relative;
+}
+.custom-list--edit .list-items .list-item {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.custom-list--edit .list-items .list-item .toggle {
+  margin: 0;
+}
+.custom-list--edit .list-items .list-item .input {
+  width: 200px;
+  max-width: 200px;
+  min-height: initial;
+  min-width: initial;
+}
+.custom-list--edit .list-items .list-item .input input {
+  height: 35px;
+  min-height: initial;
+}
+.custom-list--edit .addItemBtn {
+  margin-top: 30px;
+  background-color: #00a500;
+}
+.custom-list--edit .removeItemBtn {
+  background-color: darkred;
+}

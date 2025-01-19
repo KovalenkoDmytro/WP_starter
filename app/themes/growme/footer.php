@@ -10,7 +10,10 @@
  */
 
 ?>
-<footer><?php echo do_shortcode( '[elementor-template id="139"]' ); ?></footer>
+<footer>
+
+
+</footer>
 	</div><!-- #content -->
 
 	

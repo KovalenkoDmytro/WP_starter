@@ -34,8 +34,8 @@ services:
         define('SCRIPT_DEBUG', true );
 
     volumes:
-      - './app/themes/growme:/var/www/html/wp-content/themes/growme'
-      - './app/plugins/GutenbergBlocks:/var/www/html/wp-content/plugins/GutenbergBlocks'
+      - './app/uploads/:/var/www/html/wp-content/uploads'
+      - './app/plugins/slider:/var/www/html/wp-content/plugins/slider'
       - './.srv/wordpress/:/var/www/html'
       - './.srv/log/:/var/log'
       - './custom.ini:/usr/local/etc/php/conf.d/custom.ini'
