@@ -1,0 +1,321 @@
+@mixin tablet {
+  @media (width >= 900px) {
+    @content;
+  }
+}
+
+.review-widget {
+  overflow: hidden;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    min-width: 0;
+    padding: 30px 10px;
+  }
+
+  .google-text--container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 300px;
+    margin-bottom: 25px;
+    color: #000;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    .rating-title {
+      font-size: 24px;
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .stars {
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .text {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .review-cards {
+
+    &:not(.slick-initialized) {
+      overflow-x: scroll;
+      display: flex;
+      align-content: center;
+      align-items: start;
+
+      .review-card {
+        min-width: 100%;
+      }
+
+      @media(min-width: 576px) and (max-width: 900px) {
+        gap: 16px;
+        .review-card {
+          min-width: 49%;
+        }
+      }
+
+      @include tablet {
+        gap: 16px;
+
+        .review-card {
+          min-width: 32%;
+        }
+      }
+
+    }
+
+    @include tablet {
+      min-width: 0;
+    }
+
+    .slick-list {
+      @include tablet {
+        margin: 0 20px;
+      }
+    }
+
+    .slick-slide {
+      margin: 0 8px;
+    }
+
+    .slick-dots {
+      display: flex;
+      align-content: center;
+      align-items: start;
+      justify-content: center;
+      margin: 20px 0;
+      padding: 0;
+
+      li {
+        width: 16px;
+        height: 3px;
+        position: relative;
+        display: block;
+        background-color: #CCCCCC59;
+
+        &:first-child {
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+        }
+
+        &:last-child {
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+
+        &.slick-active {
+          border-radius: 3px;
+          background-color: #cccccc;
+        }
+
+        button {
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          border: none;
+          font-size: 0;
+          border-radius: 0;
+          display: none;
+
+          &:focus {
+            outline: none;
+            background-color: initial;
+          }
+        }
+      }
+    }
+
+    .review-card {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 4px;
+      height: 250px;
+
+      .user-container {
+        display: flex;
+        align-content: center;
+        align-items: start;
+        justify-content: space-between;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .user {
+          display: flex;
+          align-content: center;
+          align-items: center;
+
+          .avatar{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+
+          .initial {
+            background-color: cornflowerblue;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 700;
+          }
+
+          .user-info {
+            .name {
+              font-weight: 700;
+              font-size: 14px;
+              overflow: hidden;
+              padding-right: 15px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              color: #000;
+              margin: 0 0 2px 0;
+              max-width: 135px;
+            }
+
+            .date {
+              margin: 0;
+              color: #000;
+              opacity: .5;
+              font-size: 11.2px;
+            }
+          }
+        }
+      }
+
+      .rating {
+        margin-bottom: 8px;
+        margin-top: 15px;
+
+        svg {
+          &:last-child {
+            margin-left: 7px;
+          }
+        }
+      }
+
+      .review-text {
+        color: #000;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 21.75px;
+        font-size: 15px;
+        padding: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      min-width: 20px;
+      min-height: 30px;
+      border: none;
+      padding: 0;
+      z-index: 2;
+
+
+      &.--next {
+        right: 0;
+        background: transparent;
+
+        &:before {
+          top: 8px;
+          right: 0;
+          content: "";
+          background: #cccccc;
+          width: 17px;
+          height: 3px;
+          display: block;
+          transform: rotate(45deg);
+          border-radius: 2px;
+          position: absolute;
+        }
+
+        &:after {
+          content: "";
+          background: #cccccc;
+          width: 17px;
+          height: 3px;
+          display: block;
+          transform: rotate(-45deg);
+          border-radius: 2px;
+          position: absolute;
+          top: 18px;
+          right: 0;
+
+        }
+      }
+
+      &.--prev {
+        left: 0;
+        background: transparent;
+
+        &:before {
+          top: 18px;
+          left: 0;
+          content: "";
+          background: #cccccc;
+          width: 17px;
+          height: 3px;
+          display: block;
+          transform: rotate(45deg);
+          border-radius: 2px;
+          position: absolute;
+        }
+
+        &:after {
+          top: 8px;
+          left: 0;
+          content: "";
+          background: #cccccc;
+          width: 17px;
+          height: 3px;
+          display: block;
+          transform: rotate(-45deg);
+          border-radius: 2px;
+          position: absolute;
+        }
+      }
+
+      &:focus {
+        background-color: initial;
+      }
+
+      &:hover {
+        background-color: initial;
+        transform: scale(1.2) translateY(-50%);
+      }
+    }
+  }
+}
+
