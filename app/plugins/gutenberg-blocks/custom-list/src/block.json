@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/custom-list",
+	"title": "Custom list Block",
+	"category": "widgets",
+	"attributes": {
+		"paddings" : {
+			"type": "object",
+			"default": {
+				"top": "30px",
+				"left": "30px",
+				"right": "30px",
+				"bottom": "30px"
+			}
+		},
+		"margins" : {
+			"type": "object",
+			"default": {
+				"top": "0",
+				"left": "0",
+				"right": "0",
+				"bottom": "0"
+			}
+		},
+		"positions" : {
+			"type": "string",
+			"default":  "vertical"
+		},
+		"backgroundColor" : {
+			"type": "string",
+			"default":  "#fff"
+		},
+		"backgroundColorFullWidth" : {
+			"type" : "boolean",
+			"default": false
+		},
+		"textColor" : {
+			"type": "string",
+			"default":  "#000"
+		},
+
+		"iconSizes": {
+			"type": "number",
+			"default":  25
+		},
+		"itemsGap": {
+			"type": "number",
+			"default":  10
+		},
+		"divider" : {
+			"type" : "boolean",
+			"default": false
+		},
+		"dividerColor" : {
+			"type": "string",
+			"default":  "#fff"
+		},
+		"listItems": {
+			"type": "array",
+			"default": []
+		}
+
+
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

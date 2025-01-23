@@ -35,7 +35,7 @@ services:
 
     volumes:
       - './app/uploads/:/var/www/html/wp-content/uploads'
-      - './app/plugins/slider:/var/www/html/wp-content/plugins/slider'
+      - './app/plugins/google-reviews:/var/www/html/wp-content/plugins/google-reviews'
       - './.srv/wordpress/:/var/www/html'
       - './.srv/log/:/var/log'
       - './custom.ini:/usr/local/etc/php/conf.d/custom.ini'

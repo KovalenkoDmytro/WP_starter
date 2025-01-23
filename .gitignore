@@ -11,4 +11,4 @@
 /.idea/*
 !/custom.ini
 /.htaccess.php
-app
+app/plugins/google-reviews

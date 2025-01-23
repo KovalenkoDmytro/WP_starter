@@ -1,0 +1,6 @@
+[submodule "app/google-reviews"]
+	path = app/google-reviews
+	url = https://github.com/growmedevelopment/ElementorGoogleReviewPlugin.git
+[submodule "app/plugins/google-reviews"]
+	path = app/plugins/google-reviews
+	url = https://github.com/growmedevelopment/ElementorGoogleReviewPlugin.git
