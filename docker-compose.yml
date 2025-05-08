@@ -34,8 +34,9 @@ services:
         define('SCRIPT_DEBUG', true );
 
     volumes:
-      - './app/uploads/:/var/www/html/wp-content/uploads'
-      - './app/plugins/google-reviews:/var/www/html/wp-content/plugins/google-reviews'
+#      - './app/uploads/:/var/www/html/wp-content/uploads'
+#      - './app/plugins/wp-logs:/var/www/html/wp-content/plugins/wp-logs'
+#      - './app/plugins/google-reviews:/var/www/html/wp-content/plugins/google-reviews'
       - './.srv/wordpress/:/var/www/html'
       - './.srv/log/:/var/log'
       - './custom.ini:/usr/local/etc/php/conf.d/custom.ini'
