@@ -3,10 +3,9 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const path = require("path");
 
-
-// change these variables to fit your project
-const baseUrl = "./app/theme/src/";
-const outputPath = "./app/theme/public/";
+// Updated paths for dktheme
+const baseUrl = "./app/themes/dktheme/src/";
+const outputPath = "./app/themes/dktheme/public/";
 const localDomain = "http://localhost:8080/";
 
 module.exports = {
@@ -32,13 +31,15 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader",
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
                     {
                         loader: 'postcss-loader',
                         options: {
                             postcssOptions: {
                                 plugins: function () {
-                                    return [require('autoprefixer')]
+                                    return [require('autoprefixer')];
                                 }
                             }
                         }

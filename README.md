@@ -1,25 +1,38 @@
 # DK Starter Theme - Webpack + BrowserSync + SCSS + WordPress Integration
 
-This is a starter front-end development environment that integrates SCSS, Webpack, and BrowserSync for a streamlined and modern WordPress theme development workflow.
+This is a starter front-end development environment that integrates SCSS, Webpack, and BrowserSync for a streamlined and modern WordPress theme development workflow. This version is tailored for the `dktheme` inside the `/app/themes/` directory of a WordPress setup.
 
 ## 📁 Project Structure
 
 ```
-.
+your-project/
 ├── app/
-│   └── theme/
-│       ├── public/          # Compiled CSS & JS output
-│       └── src/             # Source SCSS and JS files
-│           ├── js/
-│           │   └── main.js
-│           └── style/
-│               └── scss/
-│                   └── main.scss
-├── docker-compose.yml       # Development containers for WordPress
-├── wp-config.php            # WordPress configuration
-├── package.json             # Node dependencies & scripts
-├── webpack.config.cjs       # Webpack config
-├── custom.ini               # PHP configuration overrides
+│   └── themes/
+│       └── dktheme/
+│           ├── public/                # Compiled JS and CSS output
+│           ├── src/                   # Source files
+│           │   ├── js/
+│           │   │   └── main.js
+│           │   └── style/
+│           │       └── scss/
+│           │           ├── base/
+│           │           ├── components/
+│           │           ├── layout/
+│           │           ├── pages/
+│           │           ├── themes/
+│           │           ├── utils/
+│           │           └── main.scss
+│           ├── functions.php          # WordPress theme PHP entry
+│           ├── index.php              # Main template file
+│           └── style.css              # Theme metadata and global styles
+├── docker/
+│   ├── custom.ini
+│   └── Dockerfile (optional)
+├── docker-compose.yml
+├── package.json
+├── webpack.config.cjs
+├── .gitignore
+└── README.md
 ```
 
 ## 🚀 Installation Instructions
@@ -47,7 +60,7 @@ npm install
 
 ### 4. Start Development Server
 
-This will start Webpack in development mode with file watching and BrowserSync.
+This will start Webpack in development mode with file watching and BrowserSync:
 
 ```bash
 npm run dev
@@ -61,7 +74,7 @@ The site should now be accessible at [http://localhost:3000](http://localhost:30
 npm run build
 ```
 
-This compiles and minifies the SCSS/JS into the `public` directory for deployment.
+This compiles and minifies the SCSS/JS into `app/themes/dktheme/public/`.
 
 ### 6. Start Docker (WordPress Environment)
 
@@ -82,7 +95,7 @@ Accessible at:
 ## ⚙️ Webpack Configuration Highlights
 
 - Entry points: `main.scss` and `main.js`
-- Output: Compiled assets to `app/theme/public/`
+- Output: Compiled assets to `app/themes/dktheme/public/`
 - Plugins:
   - `MiniCssExtractPlugin`: Extracts CSS
   - `CssMinimizerPlugin`: Minifies CSS

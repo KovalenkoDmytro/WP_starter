@@ -12,4 +12,7 @@
 !/custom.ini
 /.htaccess.php
 /app/
-
+!/app/themes/
+/app/themes/*
+!/app/themes/dktheme/
+/app/themes/dktheme/*
