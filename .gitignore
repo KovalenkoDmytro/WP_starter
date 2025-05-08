@@ -1,18 +1,31 @@
-/.github
-/dist/*
-!/dist/.gitkeep
-/node_modules
-/package-lock.json
-/composer.lock
+# Docker volumes
+.srv/
+
+# Environment variables
+.env
+
+# macOS
 .DS_Store
+
+# JetBrains IDEs
+.idea/
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build artifacts
 *.log
-/.srv/*
-*.env
-/.idea/*
-!/custom.ini
-/.htaccess.php
-/app/
-!/app/themes/
-/app/themes/*
-!/app/themes/dktheme/
-/app/themes/dktheme/*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# WordPress uploads (if synced locally)
+app/uploads/
+
+# Plugin archives
+*.zip
+
+# Temporary files
+*.tmp
+*.temp
