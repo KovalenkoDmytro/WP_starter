@@ -3,7 +3,6 @@ name: '${COMPOSE_PROJECT_NAME}'
 services:
   mysql:
     image: mysql:8.0
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: '${WORDPRESS_DB_PASSWORD}'
       MYSQL_DATABASE: '${WORDPRESS_DB_NAME}'
@@ -32,7 +31,7 @@ services:
       - './.srv/wordpress:/var/www/html'
 
       # 2. Твої плагіни з папки app
-      - './app/plugins:/var/www/html/wp-content/plugins'
+#      - './app/plugins:/var/www/html/wp-content/plugins'
 
       # 3. Твої теми з папки app
       - './app/themes:/var/www/html/wp-content/themes'
