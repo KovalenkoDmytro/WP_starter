@@ -1,0 +1,96 @@
+
+.statistics-container {
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 50px 0;
+}
+
+/* Individual Stat Columns - Mobile First */
+.stat-column {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 15px;
+  position: relative;
+  width: 100%;
+}
+
+/* Horizontal border between rows on mobile */
+.stat-column:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: white;
+}
+
+/* Stat Number/Title */
+.stat-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 27px;
+  color: #d0191f;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stat Description */
+.stat-description {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 27px;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+
+/* Desktop Styles - 1200px and up */
+@media (width >= 1200px) {
+  .statistics-container {
+    flex-direction: row;
+  }
+
+  .stat-column {
+    padding: 20px 15px;
+    gap: 60px;
+  }
+
+  /* Remove horizontal borders on desktop */
+  .stat-column:not(:last-child)::after {
+    display: none;
+  }
+
+  /* Vertical border between columns on desktop */
+  .stat-column:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: white;
+  }
+
+  .stat-number {
+    font-size: 52px;
+  }
+
+  .stat-description {
+    max-width: 205px;
+  }
+}

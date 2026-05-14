@@ -1,0 +1,112 @@
+.services-section {
+    background-color: #000;
+}
+
+.services-section .section-headline,
+.services-section .section-text {
+    color: #fff;
+}
+
+.services-section .section-text-container {
+    padding: 20px 20px 0;
+}
+
+.services-section__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+
+.services-section__card {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.services-section__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.services-section__card:hover .services-section__image {
+    transform: scale(1.1);
+}
+
+.services-section__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.services-section__content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.services-section__title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0;
+    max-width: 300px;
+}
+
+@media (width >= 768px) and (width <= 1199px) {
+
+    .services-section__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-section__card {
+        height: 450px;
+    }
+}
+
+@media (width >= 1200px) {
+    .services-section .section-text-container {
+        padding: 80px 40px 0;
+    }
+
+    .services-section__grid {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .services-section__card {
+        height: 548px;
+        max-width: 20%; /* 5 cards per row */
+    }
+
+    /* Mechanical: 4 cards per row → 2 rows for 7 cards */
+    .services-section--4col .services-section__card {
+        max-width: 25%;
+    }
+
+    .services-section__content {
+        bottom: 60px;
+    }
+}

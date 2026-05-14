@@ -1,0 +1,119 @@
+.cta-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: url('/wp-content/themes/forcev2/assets/images/background_quote.webp') center center no-repeat;
+  background-size: cover;
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  .cta-banner {
+    height: 320px;
+    padding: 0;
+  }
+}
+
+.cta-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: 1;
+}
+
+.cta-banner__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1248px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cta-banner__headline {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 12px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .cta-banner__headline {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cta-banner__headline {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 16px;
+  }
+}
+
+.cta-banner__subheadline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #000000;
+  max-width: 1134px;
+  margin: 0 auto 24px auto;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .cta-banner__subheadline {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cta-banner__subheadline {
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+.cta-banner__button {
+  background: transparent;
+  color: #000000;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: 2px solid #000000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  padding: 10px 18px;
+}
+
+@media (min-width: 768px) {
+  .cta-banner__button {
+    font-size: 20px;
+    padding: 14px 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .cta-banner__button {
+    font-size: 24px;
+    padding: 16px 26px;
+    line-height: 24px;
+  }
+}
+
+.cta-banner__button:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

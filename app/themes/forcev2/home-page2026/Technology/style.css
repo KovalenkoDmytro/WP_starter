@@ -1,0 +1,121 @@
+.tech {
+  background: #faf7f6;
+  padding: 60px 24px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  .tech {
+    padding: 96px 60px;
+  }
+}
+
+.tech__title {
+  color: #d0191f;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .tech__title {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tech__title {
+    font-size: 120px;
+    line-height: 120px;
+    margin-bottom: 32px;
+  }
+}
+
+.tech__subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+  .tech__subtitle {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tech__subtitle {
+    font-size: 40px;
+  }
+}
+
+.tech__grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: 1 column */
+  gap: 20px;
+  max-width: 1600px;
+  margin: 40px auto 0;
+}
+
+@media (min-width: 768px) {
+  .tech__grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet: 2 columns */
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .tech__grid {
+    grid-template-columns: repeat(4, 1fr); /* Desktop: 4 columns */
+    gap: 32px;
+    margin-top: 64px;
+  }
+}
+
+.tech__card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Optional: subtle shadow for cards */
+}
+
+@media (min-width: 1200px) {
+  .tech__card {
+    padding: 48px;
+  }
+}
+
+.tech__icon {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+}
+
+.tech__icon svg {
+  width: 100%;
+  height: auto;
+}
+
+.tech__card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: #000000;
+   font-size: 26px;
+}
+
