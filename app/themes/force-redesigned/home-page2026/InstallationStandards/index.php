@@ -11,7 +11,7 @@
     </div>
 
     <div class="standards__media">
-      <img class="standards__image" src="/wp-content/themes/forcev2/assets/images/standarts2.webp" alt="Installation Standards">
+      <img class="standards__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/standarts2.webp" alt="Installation Standards">
     </div>
 
   </div>

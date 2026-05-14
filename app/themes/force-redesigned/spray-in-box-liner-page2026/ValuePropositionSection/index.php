@@ -9,9 +9,9 @@ $base_url = esc_url(
 
         <div class="section-text-container">
 
-            <h1 class="section-headline">
+            <h2 class="section-headline">
                 Vehicles We Coat
-            </h1>
+            </h2>
             <p class="section-text">
                 Your truck box is the obvious one, but a spray-in liner works well beyond that. If something on your
                 vehicle takes a beating from regular use, chances are we can coat it.

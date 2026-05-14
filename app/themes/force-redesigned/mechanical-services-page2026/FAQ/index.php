@@ -1,6 +1,6 @@
 
 <section id="faq" class="faq faq--home">
-  <h2 class="faq__title">FAQs</h2>
+  <h2 class="faq__title">FREQUENTLY ASKED QUESTIONS</h2>
 
   <div class="faq__list">
     
@@ -26,7 +26,8 @@
 </svg></span>
       </summary>
       <div class="faq__answer">
-        <p>answer</p>
+        <p>Appointments are strongly recommended to ensure same-day service, but walk-ins are welcome based on availability.
+            Are your mechanical repairs covered by warranty? Warranty coverage is based on the parts supplier. Labour warranty varies by job, if something goes wrong with an installation we performed, we'll make it right. Ask us about coverage specifics when you book.</p>
       </div>
     </details>
 

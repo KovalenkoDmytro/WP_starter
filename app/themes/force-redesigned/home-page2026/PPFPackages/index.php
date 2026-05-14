@@ -32,7 +32,7 @@
 
     <div class="ppf-packages__item">
       <div class="ppf-packages__image-wrapper">
-        <img class="ppf-packages__image" src="/wp-content/themes/forcev2/assets/images/ppf_packages/3.webp" alt="Standard Protection Package">
+        <img class="ppf-packages__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/ppf_packages/3.webp" alt="Standard Protection Package">
       </div>
       <div class="ppf-packages__details">
         <h3 class="ppf-packages__item-title">STANDARD PROTECTION PACKAGE</h3>
@@ -53,7 +53,7 @@
 
     <div class="ppf-packages__item">
       <div class="ppf-packages__image-wrapper">
-        <img class="ppf-packages__image" src="/wp-content/themes/forcev2/assets/images/ppf_packages/2.webp" alt="Premium Protection Package">
+        <img class="ppf-packages__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/ppf_packages/2.webp" alt="Premium Protection Package">
       </div>
       <div class="ppf-packages__details">
         <h3 class="ppf-packages__item-title">PREMIUM PROTECTION PACKAGE</h3>
@@ -77,7 +77,7 @@
 
     <div class="ppf-packages__item">
       <div class="ppf-packages__image-wrapper">
-        <img class="ppf-packages__image" src="/wp-content/themes/forcev2/assets/images/ppf_packages/1.webp" alt="Ultimate Protection Package">
+        <img class="ppf-packages__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/ppf_packages/1.webp" alt="Ultimate Protection Package">
       </div>
       <div class="ppf-packages__details">
         <h3 class="ppf-packages__item-title">ULTIMATE PROTECTION PACKAGE</h3>

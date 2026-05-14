@@ -30,9 +30,7 @@ $base_url     = esc_url( get_template_directory_uri() . str_replace( get_templat
                 <?php endif; ?>
             </div>
 
-            <a class="direction-link" href="https://maps.app.goo.gl/9e9R8UpYFhrZAu2p9">
-                5004 Macleod Trail SW, Calgary
-            </a>
+            <?php force_direction_link(); ?>
 
         </div>
 </section>

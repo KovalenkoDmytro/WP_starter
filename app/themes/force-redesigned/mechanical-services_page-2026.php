@@ -1,4 +1,4 @@
-<?php /* Template Name: Mechanical Services 2026 */
+<?php /* Template Name: Page - Mechanical Services 2026 */
 get_header(); ?>
 
 <?php get_template_part( 'mechanical-services-page2026/HeroSlider/index' ); ?>

@@ -1,16 +1,14 @@
 <?php
-$base_url = esc_url(
-    get_template_directory_uri() . str_replace(get_template_directory(), '', __DIR__)
-);
+$base_url = esc_url( get_template_directory_uri() . str_replace(get_template_directory(), '', __DIR__) );
 ?>
 
 <section class="services-section services-section--4col">
   <div class="section-text-container">
     <p class="section-subtitle">What We Fix</p>
-    <h1 class="section-headline">
+    <h2 class="section-headline">
       Under the Hood<br>
       Is Still Under Our Roof.
-    </h1>
+    </h2>
     <p class="section-text">
       Force Auto Styling started as a styling shop, and that foundation means we understand vehicles from every angle. Our mechanical team brings that same careful attention to what is happening under the hood, under the frame, and everywhere else that matters for how your vehicle performs.
     </p>
@@ -33,6 +31,14 @@ $base_url = esc_url(
         <h3 class="services-section__title">Oil changes and routine maintenance</h3>
       </div>
     </div>
+
+      <div class="services-section__card">
+          <img src="<?php echo $base_url; ?>/images/8.webp" alt="Winter tire changeovers and tire service" class="services-section__image">
+          <div class="services-section__overlay"></div>
+          <div class="services-section__content">
+              <h3 class="services-section__title">Winter tire changeovers and tire service</h3>
+          </div>
+      </div>
 
     <div class="services-section__card">
       <img src="<?php echo $base_url; ?>/images/1.webp" alt="Suspension and steering repair for improved vehicle handling" class="services-section__image">

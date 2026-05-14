@@ -285,9 +285,9 @@ if (strpos($service, 'Glass Chip Repairs') !== false) {
 	<div class="homeBtn"><a href="https://forceautostyling.com/season-for-giving">Home</a></div>
       <div class="topLogos">
         <ul>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/Food Bank Logos__Calgary Food Bank Logo.jpg"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/Food Bank Logos__Airdrie Food Bank Logo.jpg"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/Food Bank Logos__Okotoks Food Bank Logo.jpg"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/Food Bank Logos__Calgary Food Bank Logo.jpg"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/Food Bank Logos__Airdrie Food Bank Logo.jpg"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/Food Bank Logos__Okotoks Food Bank Logo.jpg"></li>
         </ul>
       </div>
       <div class="topHeader"> <span>Tis' the season for</span> <font>Giving</font> </div>
@@ -535,23 +535,23 @@ if (strpos($service, 'Glass Chip Repairs') !== false) {
   </div>
   <div class="footerContent">
     <div class="footerInner">
-      <div class="footerLeft"><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__MK Auto Group.png"></div>
+      <div class="footerLeft"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__MK Auto Group.png"></div>
       <div class="footerRight">
         <ul>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__Carstar Airdrie.png"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__Carstar Okotoks.png"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__Carstar Express.png"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__Intact Midnapore.png"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__Force Auto Styling.png"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__Calgary Rim Repair.png"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__Country Hills Collision.png"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__MK Commercial.png"></li>
-          <li><img src="../../wp-content/themes/forcev2/assets/images/christmas/logos/Individual Logos__Elboya Mechanical.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__Carstar Airdrie.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__Carstar Okotoks.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__Carstar Express.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__Intact Midnapore.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__Force Auto Styling.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__Calgary Rim Repair.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__Country Hills Collision.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__MK Commercial.png"></li>
+          <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/logos/Individual Logos__Elboya Mechanical.png"></li>
         </ul>
       </div>
     </div>
 	<div class="poweredby">
-	<label>Powered by</label><a href="https://www.smartlayer.ca/" target="_blank"><img src="../../wp-content/themes/forcev2/assets/images/christmas/sl-logo.png"></a>
+	<label>Powered by</label><a href="https://www.smartlayer.ca/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/christmas/sl-logo.png"></a>
 	</div>
   </div>
 </div>

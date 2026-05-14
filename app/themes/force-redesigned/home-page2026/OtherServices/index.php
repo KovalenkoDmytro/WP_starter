@@ -3,7 +3,7 @@
   <div class="other-services__container">
     
     <div class="other-services__gallery">
-      <img class="other-services__image" src="/wp-content/themes/forcev2/assets/images/other_ways.webp" alt="Other automotive services">
+      <img class="other-services__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/other_ways.webp" alt="Other automotive services">
     </div>
 
     <div class="other-services__content">

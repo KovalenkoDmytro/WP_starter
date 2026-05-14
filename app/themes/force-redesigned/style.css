@@ -1,24 +1,15 @@
 /*!
-Theme Name: forcev2
-Theme URI: https://www.smartlayer.ca/
-Author: Smartlayer
-Author URI: https://www.smartlayer.ca/
+Theme Name: force-redesigned
+Theme URI: https://dmytro-kovalenko.ca/
+Author: Dmytro Kovalenko
+Author URI: https://dmytro-kovalenko.ca/
 Description: Description
 Version: 1.0.0
-Requires PHP: 7.4
+Requires PHP: 8.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: forcev2
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-forcev2 is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+Tags:
 */
 
 /*--------------------------------------------------------------
@@ -72,12 +63,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @font-face {
   font-family: 'TCB';
-  src: url('fonts/TCB.eot');
-  src: url('assets/fonts/TCB.eot') format('embedded-opentype'),
-  url('assets/fonts/TCB.woff2') format('woff2'),
+  src: url('assets/fonts/TCB.woff2') format('woff2'),
   url('assets/fonts/TCB.woff') format('woff'),
-  url('assets/fonts/TCB.ttf') format('truetype'),
-  url('assets/fonts/TCB.svg#TCB') format('svg');
+  url('assets/fonts/TCB.ttf') format('truetype');
 }
 
 @font-face {
@@ -90,14 +78,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   url('assets/fonts/TCM.svg#TCM') format('svg');
 }
 
-@font-face {
-  font-family: 'tw_cen_mtregular';
-  src: url('assets/fonts/tcm_____-webfont.woff2') format('woff2'),
-  url('assets/fonts/tcm_____-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
-}
 
 @font-face {
   font-family: 'helvetica_neue_lt_std57Cn';
@@ -110,51 +90,37 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 @font-face {
   font-family: 'HelveticaNeueLTStd107ExtraBlackCondensed';
-  src: url('assets/fonts/HelveticaNeueLTStd107ExtraBlackCondensed.eot');
-  src: url('assets/fonts/HelveticaNeueLTStd107ExtraBlackCondensed.eot') format('embedded-opentype'),
-  url('assets/fonts/HelveticaNeueLTStd107ExtraBlackCondensed.woff2') format('woff2'),
+  src: url('assets/fonts/HelveticaNeueLTStd107ExtraBlackCondensed.woff2') format('woff2'),
   url('assets/fonts/HelveticaNeueLTStd107ExtraBlackCondensed.woff') format('woff'),
-  url('assets/fonts/HelveticaNeueLTStd107ExtraBlackCondensed.ttf') format('truetype'),
-  url('assets/fonts/HelveticaNeueLTStd107ExtraBlackCondensed.svg#HelveticaNeueLTStd107ExtraBlackCondensed') format('svg');
+  url('assets/fonts/HelveticaNeueLTStd107ExtraBlackCondensed.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'HelveticaNeueLTStd87HeavyCondensed';
-  src: url('assets/fonts/HelveticaNeueLTStd87HeavyCondensed.eot');
-  src: url('assets/fonts/HelveticaNeueLTStd87HeavyCondensed.eot') format('embedded-opentype'),
-  url('assets/fonts/HelveticaNeueLTStd87HeavyCondensed.woff2') format('woff2'),
+  src: url('assets/fonts/HelveticaNeueLTStd87HeavyCondensed.woff2') format('woff2'),
   url('assets/fonts/HelveticaNeueLTStd87HeavyCondensed.woff') format('woff'),
-  url('assets/fonts/HelveticaNeueLTStd87HeavyCondensed.ttf') format('truetype'),
-  url('assets/fonts/HelveticaNeueLTStd87HeavyCondensed.svg#HelveticaNeueLTStd87HeavyCondensed') format('svg');
+  url('assets/fonts/HelveticaNeueLTStd87HeavyCondensed.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'HelveticaNeueLTStd55Roman';
-  src: url('assets/fonts/HelveticaNeueLTStd55Roman.eot');
-  src: url('assets/fonts/HelveticaNeueLTStd55Roman.eot') format('embedded-opentype'),
-  url('assets/fonts/HelveticaNeueLTStd55Roman.woff2') format('woff2'),
+  src: url('assets/fonts/HelveticaNeueLTStd55Roman.woff2') format('woff2'),
   url('assets/fonts/HelveticaNeueLTStd55Roman.woff') format('woff'),
-  url('assets/fonts/HelveticaNeueLTStd55Roman.ttf') format('truetype'),
-  url('assets/fonts/HelveticaNeueLTStd55Roman.svg#HelveticaNeueLTStd55Roman') format('svg');
+  url('assets/fonts/HelveticaNeueLTStd55Roman.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'HelveticaNeueLTStd87HeavyCondensedOblique';
-  src: url('assets/fonts/HelveticaNeueLTStd87HeavyCondensedOblique.eot');
-  src: url('assets/fonts/HelveticaNeueLTStd87HeavyCondensedOblique.eot') format('embedded-opentype'),
-  url('assets/fonts/HelveticaNeueLTStd87HeavyCondensedOblique.woff2') format('woff2'),
+  src: url('assets/fonts/HelveticaNeueLTStd87HeavyCondensedOblique.woff2') format('woff2'),
   url('assets/fonts/HelveticaNeueLTStd87HeavyCondensedOblique.woff') format('woff'),
-  url('assets/fonts/HelveticaNeueLTStd87HeavyCondensedOblique.ttf') format('truetype'),
-  url('assets/fonts/HelveticaNeueLTStd87HeavyCondensedOblique.svg#HelveticaNeueLTStd87HeavyCondensedOblique') format('svg');
+  url('assets/fonts/HelveticaNeueLTStd87HeavyCondensedOblique.ttf') format('truetype');
 }
 
 
 @font-face {
   font-family: "Open Sans Condensed Light";
-  src: url("assets/fonts/OpenSans-CondLight.eot?") format("eot"),
-  url("assets/fonts/OpenSans-CondLight.woff") format("woff"),
-  url("assets/fonts/OpenSans-CondLight.ttf") format("truetype"),
-  url("assets/fonts/OpenSans-CondLight.svg#OpenSans-CondensedLight") format("svg");
+  src: url("assets/fonts/OpenSans-CondLight.woff") format("woff"),
+  url("assets/fonts/OpenSans-CondLight.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

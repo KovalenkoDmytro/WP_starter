@@ -9,34 +9,34 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: url('/wp-content/themes/forcev2/assets/images/background_quote.webp') center center no-repeat;
+  background: url('../../images/background_quote.webp') center center no-repeat;
   background-size: cover;
   padding: 40px 24px;
   box-sizing: border-box;
 }
 
 .cta-banner.--mechanical-services-page2026{
-  background: url('/wp-content/themes/forcev2/mechanical-services-page2026/CoverageCTA/background.webp') center center no-repeat;
+  background: url('../../../mechanical-services-page2026/CoverageCTA/background.webp') center center no-repeat;
   background-size: cover;
 }
 
 .cta-banner.--car-detailing-page2026{
-  background: url('/wp-content/themes/forcev2/car-detailing-page2026/CoverageCTA/background.webp') center center no-repeat;
+  background: url('../../../car-detailing-page2026/CoverageCTA/background.webp') center center no-repeat;
   background-size: cover;
 }
 
 .cta-banner.--spray-in-box-liner-page2026{
-  background: url('/wp-content/themes/forcev2/spray-in-box-liner-page2026/CoverageCTA/background.webp') center center no-repeat;
+  background: url('../../../spray-in-box-liner-page2026/CoverageCTA/background.webp') center center no-repeat;
   background-size: cover;
 }
 
 .cta-banner.--ceramic-coating-page2026{
-  background: url('/wp-content/themes/forcev2/ceramic-coating-page2026/CoverageCTA/background.webp') center center no-repeat;
+  background: url('../../../ceramic-coating-page2026/CoverageCTA/background.webp') center center no-repeat;
   background-size: cover;
 }
 
 .cta-banner.--ppf-packages-page2026{
-  background: url('/wp-content/themes/forcev2/paint-protection-film-page2026/CoverageCTA/background.webp') center center no-repeat;
+  background: url('../../../paint-protection-film-page2026/CoverageCTA/background.webp') center center no-repeat;
   background-size: cover;
 }
 

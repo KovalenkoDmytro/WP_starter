@@ -1,3 +1,9 @@
+header{
+  position: sticky;
+  top: 0;
+  background: #080c0b;
+}
+
 .section-text-container{
   max-width: 1200px;
   display: flex;

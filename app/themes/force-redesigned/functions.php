@@ -1,5 +1,28 @@
 <?php
 /* Start custom code for old theme 15-04-2024 */
+
+/**
+ * Outputs the business directions anchor tag.
+ * Address and maps URL are stored as WordPress options so they can be updated
+ * without touching template files.
+ *
+ * Usage: <?php force_direction_link(); ?>
+ * Set:   update_option('company_address', '...'); update_option('company_maps_url', '...');
+ */
+function force_direction_link( string $class = 'direction-link' ): void {
+    $address  = get_option( 'company_address', '5004 Macleod Trail SW, Calgary' );
+    $maps_url = get_option( 'company_maps_url', 'https://maps.app.goo.gl/9e9R8UpYFhrZAu2p9' );
+    echo '<a class="' . esc_attr( $class ) . '" href="' . esc_url( $maps_url ) . '">' . esc_html( $address ) . '</a>';
+}
+
+add_action('init', function (): void {
+    if (!get_theme_mod('custom_logo')) {
+        $old_mods = get_option('theme_mods_forcev2');
+        if (!empty($old_mods['custom_logo'])) {
+            set_theme_mod('custom_logo', $old_mods['custom_logo']);
+        }
+    }
+});
 /** remove extra roles **/
 remove_role( 'subscriber' );
 remove_role( 'editor' );
@@ -238,7 +261,7 @@ function get_services($args) {
             $output .= '
                 <div class="pack-col">
                     <h3 class="pack-title">'.$service->title.'</h3>
-                    <img src="'.home_url().'/wp-content/themes/force/assets/images/'.$tint_img.'" alt="">
+                    <img src="'.get_template_directory_uri().'/assets/images/'.$tint_img.'" alt="">
                     <p><span>'.$service->info.'<br> ANY SHADE'.$hidden_span.'</span></p>
                     <div class="pack-btm">
                         '.$price.'
@@ -267,37 +290,37 @@ add_filter('body_class', 'add_username_to_body_class');
 //get images acc. to service
 function get_service_image($service) {
     if($service->id == 34) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/smallCars.png" alt="SMALL CARS">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/smallCars.png" alt="SMALL CARS">';
     } elseif($service->id == 38) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/medium&fullsize.png" alt="MEDIUM / FULL SIZE">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/medium&fullsize.png" alt="MEDIUM / FULL SIZE">';
     } elseif($service->id == 39) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/minivans&largeSUV.png" alt="MINIVANS & LARGE SUVs">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/minivans&largeSUV.png" alt="MINIVANS & LARGE SUVs">';
     } elseif($service->id == 40) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/small_suv.png" alt="SMALL SUVs">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/small_suv.png" alt="SMALL SUVs">';
     } elseif($service->id == 42) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/truckExtended&Crewcab.png" alt="TRUCKS EXTENDED & CREW CAB">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/truckExtended&Crewcab.png" alt="TRUCKS EXTENDED & CREW CAB">';
     } elseif($service->id == 43) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/trunk-shampoo.png" alt="TRUNK SHAMPOO">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/trunk-shampoo.png" alt="TRUNK SHAMPOO">';
     } elseif($service->id == 67) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/medium&fullsize.png" alt="CAR">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/medium&fullsize.png" alt="CAR">';
     } elseif($service->id == 68) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/minivans&largeSUV.png" alt="OVERSIZED CAR">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/minivans&largeSUV.png" alt="OVERSIZED CAR">';
     } elseif($service->id == 44) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/medium&fullsize.png" alt="OVERSIZED CAR">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/medium&fullsize.png" alt="OVERSIZED CAR">';
     } elseif($service->id == 45) { 
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/minivans&largeSUV.png" alt="OVERSIZED CAR">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/minivans&largeSUV.png" alt="OVERSIZED CAR">';
     } elseif($service->title == 'BRONZE') {
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/shield.png" alt="">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/shield.png" alt="">';
     } elseif($service->title == 'SILVER'){
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/defender.png" alt="">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/defender.png" alt="">';
     } elseif($service->title == 'GOLD'){
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/defender-plus.png" alt="">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/defender-plus.png" alt="">';
     } elseif($service->title == 'FORTIFIED'){
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/fortifide.png" alt="">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/fortifide.png" alt="">';
     } elseif($service->title == 'CUSTOM' && $service->category_id == 1){
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/custom.png" alt="">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/custom.png" alt="">';
     } else {
-        $img_defender = '<img src="'.home_url().'/wp-content/themes/force/assets/images/custom.png" alt="">';
+        $img_defender = '<img src="'.get_template_directory_uri().'/assets/images/custom.png" alt="">';
     }
     return $img_defender;
 }
@@ -324,7 +347,7 @@ function get_services_squarefeet($args) {
             $output .= '
                 <div class="pack-col">
                         <h3 class="pack-title">'.$service->title.' <span class="series">SERIES</span></h3>
-                        <img src="'.home_url().'/wp-content/themes/force/assets/images/defender.png" alt="">
+                        <img src="'.get_template_directory_uri().'/assets/images/defender.png" alt="">
                         <p><span>'.$service->info.'</span></p>
                         <div class="pack-btm">
                             '.$price.'
@@ -340,7 +363,7 @@ function get_services_squarefeet($args) {
             $output .= '
                 <div class="pack-col">
                     <h3 class="pack-title">'.$service->title.'</h3>
-                    <img src="'.home_url().'/wp-content/themes/force/assets/images/2window-img.png" alt="">
+                    <img src="'.get_template_directory_uri().'/assets/images/2window-img.png" alt="">
                     <p><span>'.$service->info.'<br> ANY SHADE</span></p>
                     <div class="pack-btm">
                         '.$price.'
@@ -1039,7 +1062,7 @@ function getCustomPackagesList() {
     }
     
     $html .= '</ul><div class="tab-content tabs"><div class="paint_protection_title">
-              <span><img src="https://forceautostyling.com/wp-content/themes/force/assets/images/paint-selector-logo.png" alt=""/></span>
+              <span><img src="' . get_template_directory_uri() . '/assets/images/paint-selector-logo.png" alt=""/></span>
               <h2>Paint Protection Selector</h2></div>';
 
     $section = 1;
@@ -1073,7 +1096,7 @@ function getCustomPackagesList() {
                       <span class="checkmark ' . (strtolower($term->name) != 'custom' ? 'checked' : '') . '"></span></label></li>';
         endwhile;
         
-        $html .= '</ul></div><div class="sedan-car"><img class="fconfig" src="https://forceautostyling.com/wp-content/themes/force/assets/images/sedan.jpg" alt="Sedan" style="opacity:1" />';
+        $html .= '</ul></div><div class="sedan-car"><img class="fconfig" src=".get_template_directory_uri()."/assets/images/sedan.jpg" alt="Sedan" style="opacity:1" />';
         
         while ($loop->have_posts()) : $loop->the_post();
             $id = get_the_ID();
@@ -1085,7 +1108,7 @@ function getCustomPackagesList() {
         endwhile;
 
         $html .= '<div class="rear-side">
-                  <h3>Rear</h3><img class="fconfig" src="https://forceautostyling.com/wp-content/themes/force/assets/images/sedan_overlays/rear_side.jpg" alt="Sedan" style="opacity:1" />
+                  <h3>Rear</h3><img class="fconfig" src=".get_template_directory_uri()."/assets/images/sedan_overlays/rear_side.jpg" alt="Sedan" style="opacity:1" />
                   </div></div></div>';
         $section++;
     }
@@ -1858,9 +1881,27 @@ add_action( 'widgets_init', 'forcev2_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+add_action('wp_head', function (): void {
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+}, 1);
+
 function forcev2_scripts() {
-	wp_enqueue_style( 'forcev2-style', get_stylesheet_uri(), array(), filemtime( get_template_directory() . '/style.css' ) );
+	wp_enqueue_style( 'forcev2-style', get_stylesheet_uri(), array( 'bootstrap' ), filemtime( get_template_directory() . '/style.css' ) );
 	wp_style_add_data( 'forcev2-style', 'rtl', 'replace' );
+
+	wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/56fd6d98ee.js', array(), null, false );
+
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Oswald:wght@300;500&family=Roboto:wght@500;700&family=Roboto+Condensed&display=swap', array(), null );
+
+	wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css', array(), '5.3.2' );
+	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), filemtime( get_template_directory() . '/assets/css/owl.carousel.min.css' ) );
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.css', array(), filemtime( get_template_directory() . '/assets/css/animate.css' ) );
+
+	if ( is_page_template( 'graphic-design.php' ) ) {
+		wp_enqueue_style( 'photoswipe', 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css', array(), '4.1.1' );
+		wp_enqueue_style( 'photoswipe-skin', 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css', array( 'photoswipe' ), '4.1.1' );
+	}
 
 	wp_enqueue_script( 'forcev2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
@@ -1976,6 +2017,19 @@ function forcev2_scripts() {
     filemtime( get_template_directory() . '/assets/js/main.js' ),
     true
   );
+
+	wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array(), '5.3.2', true );
+	wp_enqueue_script( 'owl-carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.js', array(), filemtime( get_template_directory() . '/assets/js/owl.carousel.js' ), true );
+	wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/assets/js/wow.js', array(), filemtime( get_template_directory() . '/assets/js/wow.js' ), true );
+
+	if ( is_page_template( 'graphic-design.php' ) ) {
+		wp_enqueue_script( 'photoswipe-js', 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js', array(), '4.1.1', true );
+		wp_enqueue_script( 'photoswipe-ui-js', 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js', array( 'photoswipe-js' ), '4.1.1', true );
+	}
+
+	if ( is_page_template( 'christmas.php' ) || is_page_template( 'book-your-appointment.php' ) ) {
+		wp_enqueue_style( 'christmas-style', get_template_directory_uri() . '/assets/css/christmas.css', array(), filemtime( get_template_directory() . '/assets/css/christmas.css' ) );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'forcev2_scripts' );

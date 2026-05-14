@@ -4,10 +4,6 @@ $base_url = esc_url(
 );
 ?>
 
-<link rel="stylesheet" href="<?php echo $base_url; ?>/style.css?v=1.11" type="text/css" media="all" />
-
-
-
 <section class="value-proposition-section">
     <div class="value-proposition-section-inner">
         <!-- Header Content -->

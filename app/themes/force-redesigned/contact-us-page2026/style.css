@@ -1,7 +1,7 @@
 .contact-us-page {
   font-family: Inter, Helvetica, Arial, sans-serif;
   box-sizing: border-box;
-  background: linear-gradient(0deg, #000 29.56%, rgba(12, 12, 12, 0.7) 75%, rgba(12, 12, 12, 0) 95.79%, #0C0C0C 95.79%, #0C0C0C 95.79%), url("/wp-content/themes/forcev2/contact-us-page2026/Background_Contact Us.webp");
+  background: linear-gradient(0deg, #000 29.56%, rgba(12, 12, 12, 0.7) 75%, rgba(12, 12, 12, 0) 95.79%, #0C0C0C 95.79%, #0C0C0C 95.79%), url("Background_Contact Us.webp");
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;

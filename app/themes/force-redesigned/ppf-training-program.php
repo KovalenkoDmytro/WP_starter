@@ -56,7 +56,7 @@ if ($thumbnail_id) {
 	<div class="container-custom">
 	<section class="sec-content installationTraining">
 		<h1 class="page-title text-center futura_ptheavy">PPF INSTALLATION TRAINING COURSE</h1>
-		<div class="imgBox"><img src="../../wp-content/themes/force/assets/images/ppf-installation-training.jpeg" alt="PPF installation training course" /></div>
+		<div class="imgBox"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/ppf-installation-training.jpeg" alt="PPF installation training course" /></div>
 		<div class="trainingType">
 			<div class="courseType fiveDayCourse">
 				<div class="courseHeader">
@@ -66,7 +66,7 @@ if ($thumbnail_id) {
 					<div class="skillLevel">
 						<h6>SKILL LEVEL</h6>
 						<div class="noviceLabel"><span>NOVICE</span><br/>
-							<img src="../../wp-content/themes/force/assets/images/novice.svg" alt="expert" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/novice.svg" alt="expert" />
 						</div>
 					</div>
 				</div>
@@ -93,7 +93,7 @@ if ($thumbnail_id) {
 					<div class="skillLevel">
 						<h6>SKILL LEVEL</h6>
 						<div class="expertLabel"><span>EXPERT</span><br/>
-							<img src="../../wp-content/themes/force/assets/images/expert.svg" alt="expert" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/expert.svg" alt="expert" />
 						</div>
 					</div>
 				</div>
@@ -115,14 +115,14 @@ if ($thumbnail_id) {
 		<center><a class="btn button-singup-training mb-25 font_helvetica" href="mailto:PPF@Forceautostyling.com?subject=PPF%20Training%20Sign-Up" target="blank" rel="noopener">Sign Up For Training</a></center>
 	</section>
 	<section class="sec-content learnTraining">
-		<div class="sunTekImg"><img src="../../wp-content/themes/force/assets/images/suntek.svg" alt="PPF installation training course" /></div>
+		<div class="sunTekImg"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/suntek.svg" alt="PPF installation training course" /></div>
 		<div class="learnTrainingProgram">
 			<div class="learnRequest">
 				<h2 class="title">LEARN ABOUT OUR
 				TRAINING PROGRAMS</h2>
-				<a class="btn btn-request" href="mailto:PPF@Forceautostying.com?subject=PPF%20Training%20Information%20Request" target="blank" rel="noopener">REQUEST INFO <img src="../../wp-content/themes/force/assets/images/requestArrow.svg" alt="Request Info" /></a>
+				<a class="btn btn-request" href="mailto:PPF@Forceautostying.com?subject=PPF%20Training%20Information%20Request" target="blank" rel="noopener">REQUEST INFO <img src="<?php echo get_template_directory_uri(); ?>/assets/images/requestArrow.svg" alt="Request Info" /></a>
 			</div>
-			<div class="courseBook"><img src="../../wp-content/themes/force/assets/images/courseBook.png" alt="Training course book" /></div>
+			<div class="courseBook"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/courseBook.png" alt="Training course book" /></div>
 		</div>
 	</section>
 	</div>	

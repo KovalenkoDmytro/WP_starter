@@ -1,25 +1,26 @@
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/mechanical-services-page2026/ValuePropositionSection/style.css?v=1.11" type="text/css" media="all" />
-
+<?php
+$base_url = esc_url(
+        get_template_directory_uri() . str_replace(get_template_directory(), '', __DIR__)
+);
+?>
 
 
 <section class="value-proposition-section">
     <div class="value-proposition-section-inner">
         <!-- Header Content -->
         <div class="section-text-container">
-            <p class="section-subtitle">Why Force for Mechanical Work</p>
-            <h1 class="section-headline">
-                We Already Know Your Car.
-            </h1>
+            <p class="section-subtitle">Beyond the Finish</p>
+            <h2 class="section-headline">
+                Our Full-Service Advantage
+            </h2>
             <p class="section-text">
-                While Force Auto Styling is known for wraps, PPF, tint, and detailing, the team here has decades of combined experience across all sides of automotive work, from body repair to full mechanical service. That means your vehicle stays in one place instead of bouncing between shops, and the people working on it have the kind of broad knowledge that catches things a narrow specialist might miss.
+                We are known for wraps, PPF, and tint, but our team has decades of experience in every aspect of auto work from body repair to full mechanical service. This means convenience for you as your vehicle stays in one trusted facility instead of bouncing between specialty garages. We look at the whole picture, ensuring our broad knowledge catches things a single-service shop might miss.
             </p>
         </div>
 
 
         <div class="value-proposition-content">
-
-            <img src="<?php echo get_template_directory_uri(); ?>/mechanical-services-page2026/ValuePropositionSection/other%20ways.webp"  alt="mechanical-services">
-
+            <img src="<?php echo $base_url; ?>/other_ways.webp"  alt="mechanical-services">
 
             <div class="benefits-list">
                 <div class="benefit-card">
@@ -30,7 +31,7 @@
 
                 <div class="benefit-card">
                     <ul>
-                        <li>Warranty-approved repairs using<br>[OEM / MANUFACTURER-GRADE] parts</li>
+                        <li>Parts sourced to your preference — OEM or aftermarket, we'll give you both options</li>
                     </ul>
                 </div>
 
@@ -42,13 +43,13 @@
 
                 <div class="benefit-card benefit-card-large">
                     <ul>
-                        <li>Concierge services available: body repair coordination, towing, detailing, and rental assistance while your vehicle is in the shop</li>
+                        <li> Concierge services available: body repair coordination, towing, detailing, and rental assistance while your vehicle is in the shop</li>
                     </ul>
                 </div>
 
                 <div class="benefit-card benefit-card-large">
                     <ul>
-                        <li>One facility for everything: styling, protection, and mechanical work all happen under one roof at 5004 Macleod Trail SW</li>
+                        <li>One facility for everything: styling, protection, and mechanical work</li>
                     </ul>
                 </div>
             </div>

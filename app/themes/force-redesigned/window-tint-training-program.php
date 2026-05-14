@@ -64,7 +64,7 @@ if ($thumbnail_id) {
 		<section class="sec-content installationTraining">
 			<h1 class="page-title text-center futura_ptheavy">WINDOW TINT INSTALLATION TRAINING COURSE</h1> 
 			<div class="imgBox">
-				<img src="../../wp-content/themes/force/assets/images/window-tint.jpeg" alt="Window tint"/>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/window-tint.jpeg" alt="Window tint"/>
 			</div>
 			<div class="trainingType">
 				<div class="courseType fiveDayCourse">
@@ -76,7 +76,7 @@ if ($thumbnail_id) {
 							<h6>SKILL LEVEL</h6>
 							<div class="noviceLabel">
 								<span>NOVICE</span><br/>
-								<img src="../../wp-content/themes/force/assets/images/novice.svg" alt="expert">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/novice.svg" alt="expert">
 							</div>
 						</div>
 					</div>				
@@ -105,7 +105,7 @@ if ($thumbnail_id) {
 							<h6>SKILL LEVEL</h6>
 							<div class="expertLabel">
 								<span>EXPERT</span><br/>
-								<img src="../../wp-content/themes/force/assets/images/expert.svg" alt="expert">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/expert.svg" alt="expert">
 							</div>
 						</div>
 					</div>				
@@ -130,15 +130,15 @@ if ($thumbnail_id) {
 			<div class="sunTekImg llumarImg">
 				<h3 class="title">MULTIPLE SHADES AVAILABLE</h3>
 				<p>WITH VARYING LIGHT TRANSMISSION LEVELS</p>
-				<img src="../../wp-content/themes/force/assets/images/llumar-window-film.svg" alt="PPF installation training course"/>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/llumar-window-film.svg" alt="PPF installation training course"/>
 			</div>
 			<div class="learnTrainingProgram">
 				<div class="learnRequest">
 					<h2 class="title">LEARN ABOUT OUR <br/>TRAINING PROGRAMS</h2>
-					<a href="mailto:PPF@Forceautostying.com?subject=Tint%20Training%20Information%20Request" target="blank" class="btn btn-request" rel="noopener">REQUEST INFO <img src="../../wp-content/themes/force/assets/images/requestArrow.svg" alt="Request Info"/></a>
+					<a href="mailto:PPF@Forceautostying.com?subject=Tint%20Training%20Information%20Request" target="blank" class="btn btn-request" rel="noopener">REQUEST INFO <img src="<?php echo get_template_directory_uri(); ?>/assets/images/requestArrow.svg" alt="Request Info"/></a>
 				</div>
 				<div class="courseBook">
-					<img src="../../wp-content/themes/force/assets/images/tint-courseBook.png" alt="Training course book"/>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/tint-courseBook.png" alt="Training course book"/>
 				</div>
 			</div>
 		</section>

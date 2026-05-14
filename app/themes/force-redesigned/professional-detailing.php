@@ -46,7 +46,7 @@ get_header(); ?>
                 <font class="d-block font_helvetica text-center text-white"><em>*Price is subject to change based on the size and condition of the vehicle.</em></font>
               </div>
               <div class="detailingPackage_fullDetails">
-                <img src="../wp-content/themes/forcev2/assets/img/professionalPac_shape.svg" alt=""/>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/professionalPac_shape.svg" alt=""/>
                 <div class="detail_inner">
                   <div class="exteriorDetail text-end">
                     <h2>Exterior</h2>
@@ -141,7 +141,7 @@ get_header(); ?>
                 <font class="d-block font_helvetica text-center text-white"><em>*Price is subject to change based on the size and condition of the vehicle.</em></font>
               </div>
               <div class="detailingPackage_fullDetails">
-                <img src="../wp-content/themes/forcev2/assets/img/professionalPac_shape.svg" alt=""/>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/professionalPac_shape.svg" alt=""/>
                 <div class="detail_inner">
                   <div class="exteriorDetail text-end">
                     <h2>Exterior</h2>
@@ -218,7 +218,7 @@ get_header(); ?>
                 <font class="d-block font_helvetica text-center text-white"><em>*Price is subject to change based on the size and condition of the vehicle.</em></font>
               </div>
               <div class="detailingPackage_fullDetails">
-                <img src="../wp-content/themes/forcev2/assets/img/professionalPac_shape.svg" alt=""/>
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/professionalPac_shape.svg" alt=""/>
                 <div class="detail_inner">
                   <div class="exteriorDetail text-end">
                     <h2>Exterior</h2>
@@ -312,7 +312,7 @@ get_header(); ?>
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
         <div class="coreectionServicesSingle">
           <div class="correctionServicesHeaer">
-            <img src="../wp-content/themes/forcev2/assets/img/automotiveDetailing.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/automotiveDetailing.svg" alt="" />
           </div>
           <div class="correctionServicesdisc">
             <p>
@@ -324,7 +324,7 @@ get_header(); ?>
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
         <div class="coreectionServicesSingle">
           <div class="correctionServicesHeaer">
-            <img src="../wp-content/themes/forcev2/assets/img/professionalcar-shiners.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/professionalcar-shiners.svg" alt="" />
           </div>
           <div class="correctionServicesdisc">
             <p>
@@ -336,7 +336,7 @@ get_header(); ?>
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
         <div class="coreectionServicesSingle">
           <div class="correctionServicesHeaer">
-            <img src="../wp-content/themes/forcev2/assets/img/varietyOfVechicles.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/varietyOfVechicles.svg" alt="" />
           </div>
           <div class="correctionServicesdisc">
             <p>From exterior paint correction to full interior detailing Calgary vehicle owners trust us to deliver results that speak for themselves.
@@ -347,7 +347,7 @@ get_header(); ?>
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
         <div class="coreectionServicesSingle">
           <div class="correctionServicesHeaer">
-            <img src="../wp-content/themes/forcev2/assets/img/affordableServices.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/affordableServices.svg" alt="" />
           </div>
           <div class="correctionServicesdisc">
             <p>whether you have a luxury car, high-performance car, SUV, classic car or elite vehicle, our professional team can offer you fast, efficient and affordable services.
@@ -359,7 +359,7 @@ get_header(); ?>
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp">
         <div class="coreectionServicesSingle">
           <div class="correctionServicesHeaer">
-            <img src="../wp-content/themes/forcev2/assets/img/waxAndPolishing.svg" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/waxAndPolishing.svg" alt="" />
           </div>
           <div class="correctionServicesdisc">
             <p>But don’t take our word for it, come by Force Auto Styling today so we can show you first hand why our experience, reputation and knowledge of wax & polishing is sought after.

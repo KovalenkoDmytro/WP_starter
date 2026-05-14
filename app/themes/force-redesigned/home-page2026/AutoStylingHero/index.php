@@ -7,7 +7,7 @@
     <div class="auto-hero__bg-grad-1"></div>
     <div class="auto-hero__bg-grad-2"></div>
     <div class="auto-hero__bg-img-wrapper">
-      <img class="auto-hero__bg-img" src="/wp-content/themes/forcev2/assets/images/image_2.webp" alt="Red sports car">
+      <img class="auto-hero__bg-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/image_2.webp" alt="Red sports car">
     </div>
   </div>
 

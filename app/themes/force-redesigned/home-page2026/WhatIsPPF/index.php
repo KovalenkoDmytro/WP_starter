@@ -15,7 +15,7 @@
       </p>
     </div>
 
-    <img class="ppf-intro__image" src="/wp-content/themes/forcev2/assets/images/what_is_ppf_bg.webp" alt="What is PPF diagram" />
+    <img class="ppf-intro__image" src="<?php echo get_template_directory_uri(); ?>/assets/images/what_is_ppf_bg.webp" alt="What is PPF diagram" />
     
     <div class="ppf-intro__benefits">
       <h3 class="ppf-intro__benefits-title">What PPF <br> protects against:</h3>
