@@ -3,6 +3,11 @@
   <div class="other-services__container">
 
     <div class="other-services__content">
+        <div class="other-services__text">
+            <p>
+                WHAT WE USE
+            </p>
+        </div>
 
       <div class="other-services__header">
         <h2 class="other-services__title">Tough to Beat.<br> Tougher to<br> Peel.</h2>
@@ -10,8 +15,7 @@
 
       <div class="other-services__text">
         <p>
-          [THIS SECTION NEEDS CLIENT INPUT ON THEIR BRAND/PRODUCT. Placeholder structure below]
-          Force Auto Styling uses [BRAND NAME], a [polyurea / polyurethane / hybrid] coating system [trusted by / used across / known for]. [BRAND NAME] is known for [key differentiator: UV stability, tensile strength, chemical resistance], and it is applied by our [certified / factory-trained] technicians using [high-pressure / low-pressure] spray equipment for a consistent, professional-grade finish.
+            Force Auto Styling is a certified Bullet Liner applicator. Bullet Liner is a polyurea coating system known for its tensile strength, chemical resistance, and long-term UV stability. It is applied by our certified technicians using professional spray equipment for a consistent, durable finish across the entire surface of your truck box.
         </p>
       </div>
 

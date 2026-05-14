@@ -1,22 +1,28 @@
-
+<?php
+$base_url = esc_url(
+        get_template_directory_uri() . str_replace(get_template_directory(), '', __DIR__)
+);
+?>
 
 <section class="value-proposition-section">
     <div class="value-proposition-section-inner">
-        <!-- Header Content -->
+
         <div class="section-text-container">
 
             <h1 class="section-headline">
-              Vehicles We Coat
+                Vehicles We Coat
             </h1>
             <p class="section-text">
-              Your truck box is the obvious one, but a spray-in liner works well beyond that. If something on your vehicle takes a beating from regular use, chances are we can coat it.
+                Your truck box is the obvious one, but a spray-in liner works well beyond that. If something on your
+                vehicle takes a beating from regular use, chances are we can coat it.
             </p>
         </div>
 
 
         <div class="value-proposition-content">
 
-            <img src="<?php echo get_template_directory_uri(); ?>/spray-in-box-liner-page2026/ValuePropositionSection/other%20ways.webp"  alt="mechanical-services">
+            <img src="<?php echo $base_url; ?>/other_ways.webp"
+                 alt="mechanical-services">
 
 
             <div class="benefits-list">
@@ -50,11 +56,6 @@
                     </ul>
                 </div>
 
-              <div class="benefit-card benefit-card-large">
-                <ul>
-                  <li>Tonneau cover underside</li>
-                </ul>
-              </div>
             </div>
         </div>
     </div>

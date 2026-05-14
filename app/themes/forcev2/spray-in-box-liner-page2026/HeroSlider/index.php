@@ -19,7 +19,7 @@ $phone_number = get_option('company_phone');
         </p>
 
         <div class="hero__social">
-          <a href="/contact" class="btn btn--primary hero__cta">Book Your Repair</a>
+          <a href="/contact" class="btn btn--primary hero__cta">Get a Quote</a>
           <?php if ($phone_number) : ?>
           <a href="tel:<?=esc_attr($phone_number)?>" class="btn btn--outline hero__cta">Call <?=esc_html($phone_number)?></a>
           <?php endif; ?>

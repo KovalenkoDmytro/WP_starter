@@ -1,6 +1,6 @@
 
 <section id="faq" class="faq faq--home">
-  <h2 class="faq__title">FAQs</h2>
+  <h2 class="faq__title">FREQUENTLY ASKED QUESTIONS</h2>
 
   <div class="faq__list">
     

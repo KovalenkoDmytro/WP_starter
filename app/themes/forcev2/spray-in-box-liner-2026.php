@@ -1,9 +1,9 @@
-<?php /* Template Name: Spray-in Box Liner 2026 */
+<?php /* Template Name: Page - Spray-in Box Liner 2026 */
 get_header(); ?>
 
 <?php get_template_part( 'spray-in-box-liner-page2026/HeroSlider/index' ); ?>
 <?php get_template_part( 'spray-in-box-liner-page2026/Statistics/index' ); ?>
-<?php get_template_part( 'spray-in-box-liner-page2026/TextAndTiles/index' ); ?>
+<?php get_template_part( 'spray-in-box-liner-page2026/Services/index' ); ?>
 <?php get_template_part( 'spray-in-box-liner-page2026/Text/index' ); ?>
 <?php get_template_part( 'spray-in-box-liner-page2026/CompareServices/index' ); ?>
 <?php get_template_part( 'spray-in-box-liner-page2026/OtherServices/index' ); ?>

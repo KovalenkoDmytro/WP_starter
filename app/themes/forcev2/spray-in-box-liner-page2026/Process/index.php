@@ -21,7 +21,9 @@
       <div class="process__number">2</div>
       <div class="process__content">
         <h3 class="process__step-title">Drop off your truck. </h3>
-        <p class="process__description">We handle everything from here. Your box gets stripped of any existing accessories, then cleaned, sanded, and masked before any coating goes on.</p>
+        <p class="process__description">
+            We handle everything from here. Your box gets stripped of any existing accessories, then cleaned, sanded, and masked before any coating goes on.
+        </p>
       </div>
     </div>
 
@@ -30,7 +32,9 @@
       <div class="process__number">3</div>
       <div class="process__content">
         <h3 class="process__step-title">Application. </h3>
-        <p class="process__description">Our team applies [BRAND NAME] in [NUMBER] coats for a uniform, durable finish. Cure time is [TIMEFRAME], and your truck is ready for pickup [TIMEFRAME].</p>
+        <p class="process__description">
+            Our certified team applies Bullet Liner polyurea for a uniform, durable finish. Turnaround is same-day to 24 hours depending on job scope.
+        </p>
       </div>
     </div>
 
@@ -39,7 +43,9 @@
       <div class="process__number">4</div>
       <div class="process__content">
         <h3 class="process__step-title">Pick up and go.</h3>
-        <p class="process__description">The liner is ready for work. We walk you through care and maintenance so you get the most out of it, the same way we handle post-install guidance on every service.</p>
+        <p class="process__description">
+            The liner is ready for work. We walk you through care and maintenance so you get the most out of it, the same way we handle post-install guidance on every service.
+        </p>
       </div>
     </div>
   </div>
