@@ -105,7 +105,7 @@ function kovalenko_admin_change_audit_render_dashboard(
 {
     $metrics = $payload['metrics'];
     $pagination = $payload['pagination'];
-    $initial_payload = wp_json_encode($payload);
+    $initial_payload = wp_json_encode($payload, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
     echo '<div class="wp-activity-logger-app" data-page-url="' . esc_url($page_url) . '">';
 
@@ -244,7 +244,7 @@ function kovalenko_admin_change_audit_render_dashboard(
     echo '</div>';
     echo '</section>';
 
-    echo '<script type="application/json" id="wp-activity-logger-initial-state">' . esc_html($initial_payload ?: '{}') . '</script>';
+    echo '<script type="application/json" id="wp-activity-logger-initial-state">' . ($initial_payload ?: '{}') . '</script>';
     echo '</div>';
 }
 
@@ -342,8 +342,64 @@ function kovalenko_admin_change_audit_render_table_row(array $item): void
     echo '<tr data-log-id="' . esc_attr((string) $item['id']) . '">';
     echo '<td>' . esc_html((string) $item['id']) . '</td>';
     echo '<td><span class="wp-activity-logger-user-pill">' . esc_html((string) $item['user']) . '</span></td>';
-    echo '<td>' . esc_html((string) $item['activity']) . '</td>';
+    echo '<td class="wp-activity-logger-activity-cell">';
+    echo '<div class="wp-activity-logger-activity-text">' . esc_html((string) $item['activity']) . '</div>';
+    kovalenko_admin_change_audit_render_activity_details((int) $item['id'], is_array($item['details'] ?? null) ? $item['details'] : []);
+    echo '</td>';
     echo '<td><code>' . esc_html((string) $item['ipAddress']) . '</code></td>';
     echo '<td>' . esc_html((string) $item['createdAt']) . '</td>';
     echo '</tr>';
+}
+
+/**
+ * @param list<array{label: string, before: string, after: string}> $details
+ */
+function kovalenko_admin_change_audit_render_activity_details(int $log_id, array $details): void
+{
+    if ($details === []) {
+        return;
+    }
+
+    echo '<details class="wp-activity-logger-details">';
+    echo '<summary>' . esc_html(
+        sprintf(
+            /* translators: %d: number of changed fields */
+            __('View changes (%d)', 'kovalenko-admin-change-audit'),
+            count($details)
+        )
+    ) . '</summary>';
+    echo '<div class="wp-activity-logger-detail-list" aria-label="' . esc_attr(
+        sprintf(
+            /* translators: %d: log entry ID */
+            __('Detailed changes for log %d', 'kovalenko-admin-change-audit'),
+            $log_id
+        )
+    ) . '">';
+
+    foreach ($details as $detail) {
+        if (! is_array($detail)) {
+            continue;
+        }
+
+        $label = isset($detail['label']) ? (string) $detail['label'] : '';
+        $before = isset($detail['before']) ? (string) $detail['before'] : '';
+        $after = isset($detail['after']) ? (string) $detail['after'] : '';
+
+        echo '<section class="wp-activity-logger-detail-card">';
+        echo '<h4>' . esc_html($label) . '</h4>';
+        echo '<div class="wp-activity-logger-detail-grid">';
+        echo '<div class="wp-activity-logger-detail-column">';
+        echo '<span class="wp-activity-logger-detail-label">' . esc_html__('Before', 'kovalenko-admin-change-audit') . '</span>';
+        echo '<div class="wp-activity-logger-detail-value">' . esc_html($before !== '' ? $before : __('Empty value', 'kovalenko-admin-change-audit')) . '</div>';
+        echo '</div>';
+        echo '<div class="wp-activity-logger-detail-column">';
+        echo '<span class="wp-activity-logger-detail-label">' . esc_html__('After', 'kovalenko-admin-change-audit') . '</span>';
+        echo '<div class="wp-activity-logger-detail-value">' . esc_html($after !== '' ? $after : __('Empty value', 'kovalenko-admin-change-audit')) . '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</section>';
+    }
+
+    echo '</div>';
+    echo '</details>';
 }

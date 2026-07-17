@@ -158,6 +158,10 @@ final class Kovalenko_Admin_Change_Audit_Admin_Service
                     'empty' => __('No matching logs found.', 'kovalenko-admin-change-audit'),
                     'error' => __('Could not refresh the logs right now.', 'kovalenko-admin-change-audit'),
                     'locked' => __('This screen is locked.', 'kovalenko-admin-change-audit'),
+                    'viewChanges' => __('View changes', 'kovalenko-admin-change-audit'),
+                    'before' => __('Before', 'kovalenko-admin-change-audit'),
+                    'after' => __('After', 'kovalenko-admin-change-audit'),
+                    'emptyValue' => __('Empty value', 'kovalenko-admin-change-audit'),
                 ],
             ]
         );

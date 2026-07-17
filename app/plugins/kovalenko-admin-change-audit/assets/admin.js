@@ -24,7 +24,14 @@
   };
 
   const initialStateNode = document.getElementById("wp-activity-logger-initial-state");
-  const initialState = initialStateNode?.textContent ? JSON.parse(initialStateNode.textContent) : null;
+  let initialState = null;
+  if (initialStateNode?.textContent) {
+    try {
+      initialState = JSON.parse(initialStateNode.textContent);
+    } catch (error) {
+      console.error("wp-activity-logger: failed to parse initial state", error);
+    }
+  }
 
   const state = {
     currentPage: initialState?.pagination?.currentPage ?? 1,
@@ -64,6 +71,77 @@
     window.history.replaceState({}, "", nextUrl);
   };
 
+  const formatDetailValue = (value) => {
+    if (typeof value !== "string" || value.trim() === "") {
+      return config.strings.emptyValue;
+    }
+
+    return value;
+  };
+
+  const createDetailColumn = (label, value) => {
+    const column = document.createElement("div");
+    column.className = "wp-activity-logger-detail-column";
+
+    const heading = document.createElement("span");
+    heading.className = "wp-activity-logger-detail-label";
+    heading.textContent = label;
+
+    const body = document.createElement("div");
+    body.className = "wp-activity-logger-detail-value";
+    body.textContent = formatDetailValue(value);
+
+    column.append(heading, body);
+    return column;
+  };
+
+  const createActivityCellContent = (item) => {
+    const wrapper = document.createElement("div");
+
+    const text = document.createElement("div");
+    text.className = "wp-activity-logger-activity-text";
+    text.textContent = item.activity;
+    wrapper.appendChild(text);
+
+    if (!Array.isArray(item.details) || item.details.length === 0) {
+      return wrapper;
+    }
+
+    const details = document.createElement("details");
+    details.className = "wp-activity-logger-details";
+
+    const summary = document.createElement("summary");
+    summary.textContent = `${config.strings.viewChanges} (${item.details.length})`;
+    details.appendChild(summary);
+
+    const list = document.createElement("div");
+    list.className = "wp-activity-logger-detail-list";
+    list.setAttribute("aria-label", `Detailed changes for log ${String(item.id)}`);
+
+    item.details.forEach((detail) => {
+      const card = document.createElement("section");
+      card.className = "wp-activity-logger-detail-card";
+
+      const title = document.createElement("h4");
+      title.textContent = detail.label;
+
+      const grid = document.createElement("div");
+      grid.className = "wp-activity-logger-detail-grid";
+      grid.append(
+        createDetailColumn(config.strings.before, detail.before),
+        createDetailColumn(config.strings.after, detail.after),
+      );
+
+      card.append(title, grid);
+      list.appendChild(card);
+    });
+
+    details.appendChild(list);
+    wrapper.appendChild(details);
+
+    return wrapper;
+  };
+
   const renderRows = (items, highlightNew) => {
     rowsTarget.innerHTML = "";
 
@@ -96,7 +174,8 @@
       userCell.appendChild(userPill);
 
       const activityCell = document.createElement("td");
-      activityCell.textContent = item.activity;
+      activityCell.className = "wp-activity-logger-activity-cell";
+      activityCell.appendChild(createActivityCellContent(item));
 
       const ipCell = document.createElement("td");
       const code = document.createElement("code");

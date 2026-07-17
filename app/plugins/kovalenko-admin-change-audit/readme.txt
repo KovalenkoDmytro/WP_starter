@@ -4,7 +4,7 @@ Tags: activity log, audit log, security, logging, monitoring
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 2.6.3
+Stable tag: 2.8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,18 @@ Yes. The plugin defaults to `America/Edmonton`, but the owner can choose a diffe
 2. Security panel for protecting the hidden viewer with an extra password.
 
 == Changelog ==
+
+= 2.8.0 =
+
+* Log custom field, SEO field, ACF field, and featured image changes with readable before-and-after details instead of the generic fallback message.
+* Log category and tag changes on posts with human-readable term names.
+* Aggregate all custom field changes from a single save into one log entry instead of one row per field.
+
+= 2.7.0 =
+
+* Add expandable before-and-after change details for post and page updates in the activity log viewer.
+* Store structured log details in the database for newly recorded content updates.
+* Add a schema upgrade path for the new log details column.
 
 = 2.6.3 =
 

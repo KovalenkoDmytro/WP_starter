@@ -17,6 +17,7 @@ function kovalenko_admin_change_audit_install(): void
         id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
         user_id BIGINT(20) UNSIGNED NOT NULL,
         activity TEXT NOT NULL,
+        details LONGTEXT NULL,
         ip_address VARCHAR(45) NOT NULL,
         created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY  (id),
@@ -28,7 +29,10 @@ function kovalenko_admin_change_audit_install(): void
     dbDelta($sql);
 }
 
-function kovalenko_admin_change_audit_record_activity(string $activity, ?int $user_id = null): void
+/**
+ * @param list<array{label: string, before: string, after: string}>|null $details
+ */
+function kovalenko_admin_change_audit_record_activity(string $activity, ?int $user_id = null, ?array $details = null): void
 {
     global $wpdb;
 
@@ -41,6 +45,7 @@ function kovalenko_admin_change_audit_record_activity(string $activity, ?int $us
     $ip_address = isset($_SERVER['REMOTE_ADDR'])
         ? sanitize_text_field(wp_unslash((string) $_SERVER['REMOTE_ADDR']))
         : 'Unknown';
+    $encoded_details = kovalenko_admin_change_audit_encode_activity_details($details);
 
     // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery -- Writing to the plugin's custom activity log table; WordPress has no higher-level API for it.
     $wpdb->insert(
@@ -48,11 +53,13 @@ function kovalenko_admin_change_audit_record_activity(string $activity, ?int $us
         [
             'user_id' => $resolved_user_id,
             'activity' => $activity,
+            'details' => $encoded_details,
             'ip_address' => $ip_address,
             'created_at' => current_time('mysql', true),
         ],
         [
             '%d',
+            '%s',
             '%s',
             '%s',
             '%s',
@@ -110,10 +117,10 @@ function kovalenko_admin_change_audit_get_logs_payload(array $filters): array
     // ReplacementsWrongNumber is a false positive here too: ...$rows_params holds every value.
     if ($is_ascending) {
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber
-        $rows = $wpdb->get_results($wpdb->prepare("SELECT logs.id, logs.user_id, logs.activity, logs.ip_address, logs.created_at, users.user_login FROM %i AS logs LEFT JOIN %i AS users ON users.ID = logs.user_id WHERE 1 = 1 AND logs.created_at >= %s AND logs.created_at <= %s AND (%s = '' OR users.user_login LIKE %s) AND (%s = '' OR logs.activity LIKE %s OR logs.ip_address LIKE %s OR users.user_login LIKE %s) AND (%s = '' OR logs.ip_address LIKE %s) ORDER BY %i.%i ASC LIMIT %d OFFSET %d", ...$rows_params));
+        $rows = $wpdb->get_results($wpdb->prepare("SELECT logs.id, logs.user_id, logs.activity, logs.details, logs.ip_address, logs.created_at, users.user_login FROM %i AS logs LEFT JOIN %i AS users ON users.ID = logs.user_id WHERE 1 = 1 AND logs.created_at >= %s AND logs.created_at <= %s AND (%s = '' OR users.user_login LIKE %s) AND (%s = '' OR logs.activity LIKE %s OR logs.ip_address LIKE %s OR users.user_login LIKE %s) AND (%s = '' OR logs.ip_address LIKE %s) ORDER BY %i.%i ASC LIMIT %d OFFSET %d", ...$rows_params));
     } else {
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber
-        $rows = $wpdb->get_results($wpdb->prepare("SELECT logs.id, logs.user_id, logs.activity, logs.ip_address, logs.created_at, users.user_login FROM %i AS logs LEFT JOIN %i AS users ON users.ID = logs.user_id WHERE 1 = 1 AND logs.created_at >= %s AND logs.created_at <= %s AND (%s = '' OR users.user_login LIKE %s) AND (%s = '' OR logs.activity LIKE %s OR logs.ip_address LIKE %s OR users.user_login LIKE %s) AND (%s = '' OR logs.ip_address LIKE %s) ORDER BY %i.%i DESC LIMIT %d OFFSET %d", ...$rows_params));
+        $rows = $wpdb->get_results($wpdb->prepare("SELECT logs.id, logs.user_id, logs.activity, logs.details, logs.ip_address, logs.created_at, users.user_login FROM %i AS logs LEFT JOIN %i AS users ON users.ID = logs.user_id WHERE 1 = 1 AND logs.created_at >= %s AND logs.created_at <= %s AND (%s = '' OR users.user_login LIKE %s) AND (%s = '' OR logs.activity LIKE %s OR logs.ip_address LIKE %s OR users.user_login LIKE %s) AND (%s = '' OR logs.ip_address LIKE %s) ORDER BY %i.%i DESC LIMIT %d OFFSET %d", ...$rows_params));
     }
 
     return [
@@ -129,6 +136,9 @@ function kovalenko_admin_change_audit_get_logs_payload(array $filters): array
                     'id' => (int) $row->id,
                     'user' => $user_label,
                     'activity' => kovalenko_admin_change_audit_normalize_activity_text((string) $row->activity, $user_label),
+                    'details' => kovalenko_admin_change_audit_decode_activity_details(
+                        is_string($row->details ?? null) ? $row->details : ''
+                    ),
                     'ipAddress' => (string) $row->ip_address,
                     'createdAt' => kovalenko_admin_change_audit_format_timestamp((string) $row->created_at),
                 ];
@@ -234,6 +244,93 @@ function kovalenko_admin_change_audit_normalize_activity_text(string $activity, 
     }
 
     return $activity;
+}
+
+/**
+ * @param list<array{label: string, before: string, after: string}>|null $details
+ */
+function kovalenko_admin_change_audit_encode_activity_details(?array $details): string
+{
+    if ($details === null || $details === []) {
+        return '';
+    }
+
+    $normalized = [];
+
+    foreach ($details as $detail) {
+        if (! is_array($detail)) {
+            continue;
+        }
+
+        $label = isset($detail['label']) ? trim((string) $detail['label']) : '';
+
+        if ($label === '') {
+            continue;
+        }
+
+        $normalized[] = [
+            'label' => $label,
+            'before' => kovalenko_admin_change_audit_normalize_activity_detail_value($detail['before'] ?? ''),
+            'after' => kovalenko_admin_change_audit_normalize_activity_detail_value($detail['after'] ?? ''),
+        ];
+    }
+
+    if ($normalized === []) {
+        return '';
+    }
+
+    $encoded = wp_json_encode($normalized);
+
+    return is_string($encoded) ? $encoded : '';
+}
+
+/**
+ * @return list<array{label: string, before: string, after: string}>
+ */
+function kovalenko_admin_change_audit_decode_activity_details(string $details_json): array
+{
+    if ($details_json === '') {
+        return [];
+    }
+
+    $decoded = json_decode($details_json, true);
+
+    if (! is_array($decoded)) {
+        return [];
+    }
+
+    $details = [];
+
+    foreach ($decoded as $detail) {
+        if (! is_array($detail)) {
+            continue;
+        }
+
+        $label = isset($detail['label']) ? trim((string) $detail['label']) : '';
+
+        if ($label === '') {
+            continue;
+        }
+
+        $details[] = [
+            'label' => $label,
+            'before' => kovalenko_admin_change_audit_normalize_activity_detail_value($detail['before'] ?? ''),
+            'after' => kovalenko_admin_change_audit_normalize_activity_detail_value($detail['after'] ?? ''),
+        ];
+    }
+
+    return $details;
+}
+
+/**
+ * @param scalar|null $value
+ */
+function kovalenko_admin_change_audit_normalize_activity_detail_value($value): string
+{
+    $normalized = wp_check_invalid_utf8((string) $value);
+    $normalized = str_replace(["\r\n", "\r"], "\n", $normalized);
+
+    return trim($normalized);
 }
 
 function kovalenko_admin_change_audit_delete_expired_logs(int $retention_days): void

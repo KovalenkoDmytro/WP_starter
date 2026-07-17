@@ -8,7 +8,8 @@ if (! defined('ABSPATH')) {
 
 final class Kovalenko_Admin_Change_Audit_Plugin
 {
-    public const VERSION = '2.6.3';
+    public const VERSION = '2.8.0';
+    public const SCHEMA_VERSION = '2.8.0';
     public const VIEW_CAPABILITY = 'manage_options';
     public const NIGHTLY_MAINTENANCE_HOOK = 'kovalenko_admin_change_audit_nightly_maintenance';
     public const LOG_RETENTION_DAYS = 30;
@@ -16,6 +17,7 @@ final class Kovalenko_Admin_Change_Audit_Plugin
     public const OPTION_OWNER_USER_ID = 'kovalenko_admin_change_audit_owner_user_id';
     public const OPTION_SHOW_ACCESS_NOTICE = 'kovalenko_admin_change_audit_show_access_notice';
     public const OPTION_ACCESS_PASSWORD_HASH = 'kovalenko_admin_change_audit_access_password_hash';
+    public const OPTION_SCHEMA_VERSION = 'kovalenko_admin_change_audit_schema_version';
     public const OPTION_TIMEZONE = 'kovalenko_admin_change_audit_timezone';
     public const USER_META_UNLOCKED_UNTIL = 'kovalenko_admin_change_audit_unlocked_until';
     public const ACCESS_PASSWORD_CONST = 'KOVALENKO_ADMIN_CHANGE_AUDIT_ACCESS_PASSWORD';
@@ -38,6 +40,7 @@ final class Kovalenko_Admin_Change_Audit_Plugin
         register_activation_hook($this->plugin_file, [$this, 'install']);
         register_deactivation_hook($this->plugin_file, [$this, 'deactivate']);
 
+        add_action('init', [$this, 'maybe_upgrade_schema'], 1);
         add_action('init', [$this, 'schedule_nightly_maintenance']);
         add_action(self::NIGHTLY_MAINTENANCE_HOOK, [$this, 'run_nightly_maintenance']);
 
@@ -47,8 +50,17 @@ final class Kovalenko_Admin_Change_Audit_Plugin
 
     public function install(): void
     {
-        kovalenko_admin_change_audit_install();
+        $this->upgrade_schema();
         $this->admin_service->setup_on_install();
+    }
+
+    public function maybe_upgrade_schema(): void
+    {
+        if (get_option(self::OPTION_SCHEMA_VERSION, '') === self::SCHEMA_VERSION) {
+            return;
+        }
+
+        $this->upgrade_schema();
     }
 
     public function deactivate(): void
@@ -112,6 +124,12 @@ final class Kovalenko_Admin_Change_Audit_Plugin
     public function get_timezone_name(): string
     {
         return $this->admin_service->get_timezone_name();
+    }
+
+    private function upgrade_schema(): void
+    {
+        kovalenko_admin_change_audit_install();
+        update_option(self::OPTION_SCHEMA_VERSION, self::SCHEMA_VERSION, false);
     }
 
     private function get_log_retention_days(): int
